@@ -1,0 +1,8 @@
+<div class="color-slider">
+  <canvas
+    #canvas
+    (mousedown)="onMouseDown($event)"
+  >
+  </canvas>
+  <div #handler class="color-slider-handler"  (mousedown)="handlerDragging=true"></div>
+</div>

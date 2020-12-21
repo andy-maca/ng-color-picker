@@ -1,0 +1,12 @@
+
+<div class="color-palette">
+  <canvas #canvas>
+  </canvas>
+  <div #cursor class="cursor-symbol">
+    <div class="cursor-v-border"></div>
+    <div class="cursor-h-border"></div>
+    <div class="cursor-v-content"></div>
+    <div class="cursor-h-content"></div>
+  </div>
+  <div class="palette-overlay" (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)"></div>
+</div>

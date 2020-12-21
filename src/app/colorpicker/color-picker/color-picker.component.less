@@ -1,0 +1,44 @@
+.color-picker
+{
+  width: 600px;
+  background: black;
+  padding: 5px;
+  color: white;
+
+  ul.colors-boxes {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+    width: 250px;
+
+    li {
+      width: 20px;
+      height: 15px;
+      margin: 5px;
+    }
+  }
+
+  .color-preview {
+    margin: 4px;
+  }
+
+  .color-input {
+    display: flex;
+    label {
+      width: 50%;
+      text-align: right;
+      display: inline;
+      margin-right: 2px;
+    }
+    input {
+      width: 50%;
+      display: inline;
+      height: 25px;
+      background-color: black;
+    }
+  }
+}
