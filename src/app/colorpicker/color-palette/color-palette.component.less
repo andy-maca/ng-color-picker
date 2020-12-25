@@ -1,68 +1,85 @@
 @palette-cursor-size: 20px;
 @palette-cursor-cross-size: 2px;
-@palette-cursor-bg-color: rgb(76, 76, 76);
-@palette-cursor-wrapper-bg-color: rgb(255, 255, 255);
+@palette-cursor-bg-color: black;
+@slider-size: 6px;
 
-.color-palette {
-  position: relative;
-  cursor:crosshair;
-  width: 100%;
+.color-picker {
+  display: flex;
+  flex-direction: row;
   height: 100%;
+  width: 100%;
+  padding: @slider-size 0;
 
   canvas {
+    flex: 1;
     width: 100%;
-    height: 100%;
   }
 
-  .cursor-symbol {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: @palette-cursor-size;
-    width: @palette-cursor-size;
+  .color-palette {
+    position: relative;
+    flex: 1;
+    display: flex;
 
-    .cursor-v-border {
+    .cursor-symbol {
       position: absolute;
-      background: @palette-cursor-wrapper-bg-color;
-      width: @palette-cursor-cross-size*2;
+      top: 0;
+      left: 0;
       height: @palette-cursor-size;
-      left: @palette-cursor-size/2-@palette-cursor-cross-size;
-      top: 0px;
-    }
-
-    .cursor-v-content {
-      position: absolute;
-      background: @palette-cursor-bg-color;
-      height: @palette-cursor-size - @palette-cursor-cross-size;
-      width: @palette-cursor-cross-size;
-      left: @palette-cursor-size/2-@palette-cursor-cross-size+1;
-      top: 1px;
-    }
-
-    .cursor-h-border {
-      position: absolute;
-      background: @palette-cursor-wrapper-bg-color;
-      height: @palette-cursor-cross-size*2;
       width: @palette-cursor-size;
-      top: @palette-cursor-size/2 - @palette-cursor-cross-size;
-      left: 0px;
+
+      .cursor-v-content {
+        position: absolute;
+        background: @palette-cursor-bg-color;
+        height: @palette-cursor-size - @palette-cursor-cross-size;
+        width: @palette-cursor-cross-size;
+        left: @palette-cursor-size/2-@palette-cursor-cross-size+1;
+        top: 1px;
+      }
+
+      .cursor-h-content {
+        position: absolute;
+        background: @palette-cursor-bg-color;
+        width: @palette-cursor-size - @palette-cursor-cross-size;
+        height: @palette-cursor-cross-size;
+        top: @palette-cursor-size/2 - @palette-cursor-cross-size+1;
+        left: 1px;
+      }
     }
 
-    .cursor-h-content {
+    .palette-overlay {
+      cursor: crosshair;
       position: absolute;
-      background: @palette-cursor-bg-color;
-      width: @palette-cursor-size - @palette-cursor-cross-size;
-      height: @palette-cursor-cross-size;
-      top: @palette-cursor-size/2 - @palette-cursor-cross-size+1;
-      left: 1px;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
     }
   }
 
-  .palette-overlay {
-    position: absolute;
-    opacity: 0;
-    width: 100%;
+
+  .color-slider {
+    width: 20px;
     height: 100%;
-    top: 0;
+    border: 1px solid gray;
+    margin-left: 20px;
+    display: flex;
+  }
+
+  .color-slider-handler-wrapper {
+    width: @slider-size;
+    height: 100%;
+    position: relative;
+    border: 1px solid transparent;
+
+    .color-slider-handler {
+      width: 0px;
+      height: 0px;
+      border-top: @slider-size solid transparent;
+      border-bottom: @slider-size solid transparent;
+      border-right: @slider-size solid white;
+      display: inline-block;
+      position: absolute;
+      top: -@slider-size;
+    }
   }
 }

@@ -4,21 +4,29 @@
   background: black;
   padding: 5px;
   color: white;
+  user-select: none;
 
   ul.colors-boxes {
     list-style: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    align-content: space-between;
     padding: 0;
     margin: 0 auto;
-    width: 250px;
 
     li {
       width: 20px;
       height: 15px;
       margin: 5px;
+    }
+
+    &.custom-colors {
+      flex-direction: column; height: 50px;
+      li {
+        background-color: white;
+      }
     }
   }
 
@@ -29,16 +37,25 @@
   .color-input {
     display: flex;
     label {
-      width: 50%;
+      width: 40%;
       text-align: right;
       display: inline;
       margin-right: 2px;
     }
     input {
-      width: 50%;
-      display: inline;
-      height: 25px;
-      background-color: black;
+      width: 60%;
     }
+  }
+
+  .hex-value {
+    display: flex;
+
+  }
+
+  input {
+    display: inline;
+    height: 25px;
+    background-color: black;
+    color: white;
   }
 }

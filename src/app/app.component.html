@@ -1,15 +1,1 @@
-<!-- <h3>Color definitions for palette</h3>
-<div>
-  <span *ngFor="let item of paletteColors" style="width: 10px;height: 10px; margin: 0 15px;" [style.backgroundColor]="item">{{item}}</span>
-</div>
-<div style="position: relative;">
-  <div style="display: inline-block;width: 500px;height: 500px;">
-    <app-color-palette [(color)]="color"></app-color-palette>
-  </div>
-  <div style="display: inline-block;margin-left: 10px;position: relative; width: 50px;height: 500px;">
-    <app-color-slider [colors]="[color, 'rgba(255,255,255,1)']" (colorChange)="sliderColor=$event"></app-color-slider>
-  </div>
-</div>
-<div [style.backgroundColor]="color">Palette Color: {{color}}</div>
-<div [style.backgroundColor]="sliderColor">Slider Color: {{sliderColor}}</div> -->
-<app-color-picker></app-color-picker>
+<tt-color-picker></tt-color-picker>

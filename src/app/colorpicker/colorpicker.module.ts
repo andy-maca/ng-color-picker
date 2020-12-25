@@ -1,29 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ColorPaletteComponent } from './color-palette/color-palette.component';
-import { ColorSliderComponent } from './color-slider/color-slider.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
-import { ColorPipe } from './color.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     ColorPaletteComponent,
-    ColorSliderComponent,
-    ColorPickerComponent,
-    ColorPipe
+    ColorPickerComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ColorPaletteComponent,
-    ColorSliderComponent,
-    ColorPickerComponent,
-    ColorPipe
+    ColorPickerComponent
   ]
 })
 export class ColorPickerModule { }

@@ -1,4 +1,7 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ColorPaletteComponent } from '../color-palette/color-palette.component';
 
 import { ColorPickerComponent } from './color-picker.component';
 
@@ -8,7 +11,9 @@ describe('ColorPickerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ColorPickerComponent ]
+      imports: [FormsModule, ReactiveFormsModule],
+      declarations: [ ColorPickerComponent, ColorPaletteComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

@@ -1,4 +1,10 @@
+
+
 # NgColorPicker
+
+A color picker as QColorDialog in Qt, works the same except the 'Pick Screen Color' is missing, because this function is limitated in browser.
+- The implementation refers to QColorDialog in https://code.woboq.org/qt5/qtbase/src/widgets/dialogs/qcolordialog.cpp.html
+- `hsv2rgb` and `rgb2hsv` refers to QColor in https://code.woboq.org/qt5/qtbase/src/gui/painting/qcolor.cpp.html
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
