@@ -14,7 +14,7 @@
     <div class="col-sm-6">
       <div>Custom colors</div>
       <ul class="colors-boxes custom-colors">
-        <li *ngFor="let index of arrayOfCount(customColorCount)" [style.backgroundColor]="customColors[index]" (click)="onHexChangeFromGUi(customColors[index]||'0xfff')"></li>
+        <li *ngFor="let index of arrayOfCount(customColorCount)" [style.backgroundColor]="customColors[index]" (click)="onHexChangeFromGUi(customColors[index]||'#ffffff')"></li>
       </ul>
       <button class="btn btn-primary btn-sm" style="width: 100%;" (click)="addToCustom()">Add to Custom Colors</button>
     </div>
