@@ -27,6 +27,8 @@ describe("ColorPaletteComponent", () => {
     sliderCanvas = element.querySelector<HTMLCanvasElement>(".color-slider canvas");
     cursor = element.querySelector<HTMLElement>(".cursor-symbol");
 
+    element.style.height = "150px";
+    element.style.width = "300px";
     cursor.style.height = "20px";
     cursor.style.width = "20px";
     hsv = [];
@@ -61,7 +63,7 @@ describe("ColorPaletteComponent", () => {
   it("should emit correct HSV value when mouse down/drag on the palette", fakeAsync(() => {
     component.mouseDownOnPalette({offsetX: 10, offsetY: 10} as MouseEvent);
     tick();
-    expect(hsv).toEqual([347, 238, 255]);
+    expect(hsv).toEqual([345, 237, 255]);
 
     const rect = paletteCanvas.getBoundingClientRect();
     component.onMouseMoveOnWindow({

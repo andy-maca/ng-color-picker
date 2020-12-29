@@ -25,6 +25,9 @@ describe("ColorPickerComponent", () => {
     component = fixture.componentInstance;
     element = fixture.nativeElement as HTMLElement;
 
+    element.style.height = "300px";
+    element.style.width = "600px";
+    
     fixture.detectChanges();
   });
 
