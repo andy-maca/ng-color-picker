@@ -1,58 +1,58 @@
 <div class="color-picker">
-  <div class="row ">
-    <div class="col-sm-6">
+  <div class="flex-container-and-item flex-row">
+    <div class="flex-container-and-item">
       <div>Basic colors</div>
-      <ul class="colors-boxes">
+      <ul class="colors-boxes basic-colors">
         <li *ngFor="let basicColor of basicColors" [style.backgroundColor]="basicColor" (click)="onHexChangeFromGUi(basicColor)"></li>
       </ul>
     </div>
-    <div class="col-sm-6">
+    <div class="flex-container-and-item">
       <tt-color-palette [hsvColor]="hsvColor" (hsvColorChange)="onHsvChangeFromPalette($event)"></tt-color-palette>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-6">
+  <div class="flex-container-and-item flex-row">
+    <div class="flex-container-and-item">
       <div>Custom colors</div>
       <ul class="colors-boxes custom-colors">
-        <li *ngFor="let index of arrayOfCount(customColorCount)" [style.backgroundColor]="customColors[index]" (click)="onHexChangeFromGUi(customColors[index]||'#ffffff')"></li>
+        <li *ngFor="let index of arrayOfCount(customColorCount)" [style.backgroundColor]="customColors[index]||'#ffffff'" (click)="onHexChangeFromGUi(customColors[index]||'#ffffff')"></li>
       </ul>
       <button class="btn btn-primary btn-sm" style="width: 100%;" (click)="addToCustom()">Add to Custom Colors</button>
     </div>
-    <div class="col-sm-6" style="display: flex;flex-direction: row;">
+    <div class="flex-container-and-item flex-row">
       <div class="color-preview" style="width: 50px;" [style.backgroundColor]="hexColor"></div>
-      <div style="flex: 1;">
-        <div style="display: flex;">
-          <form [formGroup]="hsvForm" class="color-hsv">
+      <div class="flex-container-and-item">
+        <div class="flex-container-and-item flex-row">
+          <form class="hsv-form" [formGroup]="hsvForm" class="color-hsv">
             <div class="color-input">
               <label>Hue:</label>
-              <input type="number" min="0" max="359" step="1" formControlName="hsv_h" />
+              <input type="number" class="form-control" min="0" max="359" step="1" formControlName="hsv_h" />
             </div>
             <div class="color-input">
               <label>Sat:</label>
-              <input type="number" min="0" max="255" step="1" formControlName="hsv_s" />
+              <input type="number" class="form-control" min="0" max="255" step="1" formControlName="hsv_s" />
             </div>
             <div class="color-input">
               <label>Val:</label>
-              <input type="number" min="0" max="255" step="1" formControlName="hsv_v" />
+              <input type="number" class="form-control" min="0" max="255" step="1" formControlName="hsv_v" />
             </div>
           </form>
-          <form [formGroup]="rgbForm" class="color-rbg">
+          <form class="rgb-form" [formGroup]="rgbForm" class="color-rbg">
             <div class="color-input">
               <label>Red:</label>
-              <input type="number" min="0" max="255" step="1" formControlName="rgb_r" />
+              <input type="number" class="form-control" min="0" max="255" step="1" formControlName="rgb_r" />
             </div>
             <div class="color-input">
               <label>Green:</label>
-              <input type="number" min="0" max="255" step="1" formControlName="rgb_g" />
+              <input type="number" class="form-control" min="0" max="255" step="1" formControlName="rgb_g" />
             </div>
             <div class="color-input">
               <label>Blue:</label>
-              <input type="number" min="0" max="255" step="1" formControlName="rgb_b" />
+              <input type="number" class="form-control" min="0" max="255" step="1" formControlName="rgb_b" />
             </div>
           </form>
         </div>
         <div class="hex-value">
-          <label>HTML:</label><input type="text" [ngModel]="hexColor" (ngModelChange)="onHexChangeFromGUi($event)" />
+          <label>HTML:</label><input type="text" class="form-control" [ngModel]="hexColor" (ngModelChange)="onHexChangeFromGUi($event)" />
         </div>
       </div>
     </div>

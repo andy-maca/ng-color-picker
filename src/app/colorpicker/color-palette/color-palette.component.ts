@@ -6,8 +6,9 @@ import {
   HostListener,
   Input,
   Output,
-  ViewChild,
+  ViewChild
 } from "@angular/core";
+
 import { hsvToRgb } from "../color-utils";
 
 /**
@@ -19,11 +20,11 @@ import { hsvToRgb } from "../color-utils";
 @Component({
   selector: "tt-color-palette",
   templateUrl: "./color-palette.component.html",
-  styleUrls: ["./color-palette.component.less"],
+  styleUrls: ["./color-palette.component.less"]
 })
 export class ColorPaletteComponent implements AfterViewInit {
-  private hue = 100;
-  private sat = 100;
+  private hue = 0;
+  private sat = 0;
   private value = 255;
 
   private paletteCanvasHeight: number = 0;
@@ -61,7 +62,7 @@ export class ColorPaletteComponent implements AfterViewInit {
   }
 
   @Output()
-  hsvColorChange: EventEmitter<number[]> = new EventEmitter(true);
+  readonly hsvColorChange: EventEmitter<number[]> = new EventEmitter(true);
 
   @ViewChild("paletteCanvas", { static: true })
   paletteCanvas: ElementRef<HTMLCanvasElement>;
@@ -124,8 +125,9 @@ export class ColorPaletteComponent implements AfterViewInit {
   }
 
   mouseDownOnSlider(evt: MouseEvent) {
-    const clientRect = this.sliderCanvas.nativeElement.getBoundingClientRect();
-    this.setHandlerPosition(evt.y - clientRect.top);
+    this.handlerDragging = true;
+    const sliderRect = this.sliderCanvas.nativeElement.getBoundingClientRect();
+    this.setHandlerPosition(evt.y - sliderRect.top);
     this.hsvColorChange.emit([this.hue, this.sat, this.value]);
   }
 

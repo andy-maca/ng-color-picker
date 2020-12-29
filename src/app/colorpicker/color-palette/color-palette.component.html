@@ -1,21 +1,18 @@
-
-<div class="color-picker">
-  <div class="color-palette">
-    <canvas #paletteCanvas>
-    </canvas>
-    <div #cursor class="cursor-symbol" draggable="false">
-      <div class="cursor-v-content"></div>
-      <div class="cursor-h-content"></div>
-    </div>
-    <div class="palette-overlay" (mousedown)="mouseDownOnPalette($event)"></div>
+<div class="color-palette">
+  <canvas #paletteCanvas>
+  </canvas>
+  <div #cursor class="cursor-symbol" draggable="false">
+    <div class="cursor-v-content"></div>
+    <div class="cursor-h-content"></div>
   </div>
-
-  <div class="color-slider">
-    <canvas #sliderCanvas (mousedown)="mouseDownOnSlider($event)">
-    </canvas>
-  </div>
-
-  <span class="color-slider-handler-wrapper" (mousedown)="mouseDownOnSlider($event)">
-    <div #handler class="color-slider-handler" (mousedown)="handlerDragging=true"></div>
-  </span>
+  <div class="palette-overlay" (mousedown)="mouseDownOnPalette($event)"></div>
 </div>
+
+<div class="color-slider">
+  <canvas #sliderCanvas (mousedown)="mouseDownOnSlider($event)">
+  </canvas>
+</div>
+
+<span class="color-slider-handler-wrapper" (mousedown)="mouseDownOnSlider($event)">
+  <div #handler class="color-slider-handler"></div>
+</span>
