@@ -1,6 +1,6 @@
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
-import "zone.js/dist/zone-testing";
+import "projects/ng-color-picker/src/node_modules/zone.js/dist/zone-testing";
 import { getTestBed } from "@angular/core/testing";
 import {
   BrowserDynamicTestingModule,

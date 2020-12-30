@@ -1,5 +1,5 @@
 /*
- * Public API Surface of color-picker
+ * Public API Surface of ng-color-picker
  */
 
 export * from "./lib/color-palette/color-palette.component";

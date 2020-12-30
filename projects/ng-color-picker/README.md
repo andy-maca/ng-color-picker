@@ -8,20 +8,20 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Code scaffolding
 
-Run `ng generate component component-name --project color-picker` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project color-picker`.
-> Note: Don't forget to add `--project color-picker` or else it will be added to the default project in your `angular.json` file. 
+Run `ng generate component component-name --project ng-color-picker` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-color-picker`.
+> Note: Don't forget to add `--project ng-color-picker` or else it will be added to the default project in your `angular.json` file. 
 
 ## Build
 
-Run `ng build color-picker` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build ng-color-picker` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Publishing
 
-After building your library with `ng build color-picker`, go to the dist folder `cd dist/color-picker` and run `npm publish`.
+After building your library with `ng build ng-color-picker`, go to the dist folder `cd dist/ng-color-picker` and run `npm publish`.
 
 ## Running unit tests
 
-Run `ng test color-picker` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test ng-color-picker` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Further help
 

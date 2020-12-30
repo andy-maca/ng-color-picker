@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "color-picker": [
-        "dist/color-picker"
+      "ng-color-picker": [
+        "dist/ng-color-picker"
       ],
-      "color-picker/*": [
-        "dist/color-picker/*"
+      "ng-color-picker/*": [
+        "dist/ng-color-picker/*"
       ]
     }
   },

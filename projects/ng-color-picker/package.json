@@ -1,5 +1,5 @@
 {
-  "name": "color-picker",
+  "name": "ng-color-picker",
   "version": "0.0.1",
   "author": "Andy Ma<andy.ca.ma@me.com>",
   "description": "A color picker like QColorDialog in Qt",
