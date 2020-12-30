@@ -6,6 +6,26 @@
   color: white;
   user-select: none;
 
+  .flex-container-and-item {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+
+    > .flex-item {
+      position: relative;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
+    }
+
+    &.flex-row {
+      flex-flow: row;
+    }
+  }
+
   ul.colors-boxes {
     width: 100%;
     list-style: none;

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { hsvToRgb, rgbToHex, rgbToHsv, stringToRgb } from "../color-utils";
+import { hsvToRgb, rgbToHex, rgbToHsv, stringToRgb } from "./color-utils";
 
 import { BASIC_COLORS } from "./basic-colors";
 
@@ -24,7 +24,7 @@ export class ColorPickerComponent implements AfterViewInit {
   @Input()
   hexColor = "#ffffff";
 
-  //save as hex
+  // save as hex
   @Input()
   customColors: string[] = [];
 
@@ -34,7 +34,7 @@ export class ColorPickerComponent implements AfterViewInit {
   @Output()
   readonly colorChange: EventEmitter<string> = new EventEmitter();
 
-  private customColorIndex: number = 0;
+  private customColorIndex = 0;
 
   constructor(private formBuilder: FormBuilder) {
     this.rgbColor = stringToRgb(this.hexColor);
@@ -141,7 +141,7 @@ export class ColorPickerComponent implements AfterViewInit {
       return;
     }
 
-    //don't re-assign to hsvColor, it will cause input change of tt-color-palette
+    // don't re-assign to hsvColor, it will cause input change of tt-color-palette
     this.hsvColor[0] = hsv[0];
     this.hsvColor[1] = hsv[1];
     this.hsvColor[2] = hsv[2];

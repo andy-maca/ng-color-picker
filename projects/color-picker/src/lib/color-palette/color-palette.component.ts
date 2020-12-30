@@ -13,9 +13,6 @@ import { hsvToRgb } from "../color-utils";
 
 /**
  * Color palette for Hue, Saturation and Value
- *
- * @export
- * @class ColorPaletteComponent
  */
 @Component({
   selector: "tt-color-palette",
@@ -27,17 +24,17 @@ export class ColorPaletteComponent implements AfterViewInit {
   private sat = 0;
   private value = 255;
 
-  private paletteCanvasHeight: number = 0;
-  private paletteCanvasWidth: number = 0;
+  private paletteCanvasHeight = 0;
+  private paletteCanvasWidth = 0;
 
-  private sliderCanvasHeight: number = 0;
-  private sliderCanvasWidth: number = 0;
+  private sliderCanvasHeight = 0;
+  private sliderCanvasWidth = 0;
 
   private handlerDragging = false;
   private handlerOffsetTop = 0;
 
-  private paletteDragging: boolean = false;
-  private cursorSize: number = 0;
+  private paletteDragging = false;
+  private cursorSize = 0;
 
   @Input()
   set hsvColor(hsv: number[]) {
@@ -260,7 +257,6 @@ export class ColorPaletteComponent implements AfterViewInit {
 
   /**
    * Get Hue of HSV by x coordinate in palette canvas
-   * @param x
    */
   private xToHue(x: number) {
     return Math.round(359 - (x * 359) / this.paletteCanvasWidth);
@@ -268,7 +264,6 @@ export class ColorPaletteComponent implements AfterViewInit {
 
   /**
    * Get Sat of HSV by y coordinate in palette canvas
-   * @param x
    */
   private yToSat(y: number) {
     return Math.round(255 - (y * 255) / this.paletteCanvasHeight);
@@ -276,7 +271,6 @@ export class ColorPaletteComponent implements AfterViewInit {
 
   /**
    * Get Value of HSV by y coordinate in slider canvas
-   * @param y
    */
   private yToValue(y: number) {
     return Math.round(255 - (y / this.sliderCanvasHeight) * 255);

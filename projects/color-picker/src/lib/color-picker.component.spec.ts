@@ -1,8 +1,8 @@
 import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { stringToRgb } from "../color-utils";
-import { ColorPickerModule } from "../colorpicker.module";
+import { stringToRgb } from "./color-utils";
+import { ColorPickerModule } from "./color-picker.module";
 
 import { BASIC_COLORS } from "./basic-colors";
 import { ColorPickerComponent } from "./color-picker.component";
@@ -27,7 +27,7 @@ describe("ColorPickerComponent", () => {
 
     element.style.height = "300px";
     element.style.width = "600px";
-    
+
     fixture.detectChanges();
   });
 

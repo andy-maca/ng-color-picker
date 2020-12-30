@@ -63,7 +63,7 @@ describe("ColorPaletteComponent", () => {
   it("should emit correct HSV value when mouse down/drag on the palette", fakeAsync(() => {
     component.mouseDownOnPalette({offsetX: 10, offsetY: 10} as MouseEvent);
     tick();
-    expect(hsv).toEqual([345, 237, 255]);
+    expect(hsv).toEqual([345, 238, 255]);
 
     const rect = paletteCanvas.getBoundingClientRect();
     component.onMouseMoveOnWindow({

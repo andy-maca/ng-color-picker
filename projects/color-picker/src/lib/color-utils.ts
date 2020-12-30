@@ -1,11 +1,14 @@
 const USHRT_MAX = 0xffff;
 
-function fuzzyCompare(p1, p2) {
+function fuzzyCompare(p1: number, p2: number) {
   return Math.abs(p1 - p2) * 100000 <= Math.min(Math.abs(p1), Math.abs(p2));
 }
 
 export function rgbToHex(rgb: number[]) {
-  let r: number, g: number, b: number;
+  let r: number;
+  let g: number;
+  let b: number;
+
   if (rgb && rgb.length >= 3) {
     r = rgb[0];
     g = rgb[1];
@@ -14,23 +17,23 @@ export function rgbToHex(rgb: number[]) {
     return null;
   }
 
-  let r_s = r.toString(16);
-  let g_s = g.toString(16);
-  let b_s: string = b.toString(16);
+  let rgbR = r.toString(16);
+  let rgbG = g.toString(16);
+  let rgbB: string = b.toString(16);
 
-  if (r_s.length == 1) {
-    r_s = "0" + r_s;
+  if (rgbR.length === 1) {
+    rgbR = "0" + rgbR;
   }
 
-  if (g_s.length == 1) {
-    g_s = "0" + g_s;
+  if (rgbG.length === 1) {
+    rgbG = "0" + rgbG;
   }
 
-  if (b_s.length == 1) {
-    b_s = "0" + b_s;
+  if (rgbB.length === 1) {
+    rgbB = "0" + rgbB;
   }
 
-  return "#" + r_s + g_s + b_s;
+  return "#" + rgbR + rgbG + rgbB;
 }
 
 // r: 0-255
@@ -40,7 +43,9 @@ export function rgbToHex(rgb: number[]) {
 // returns: [ 0-359, 0-255, 0-255 ]
 // refers to https://code.woboq.org/qt5/qtbase/src/gui/painting/qcolor.cpp.html
 export function rgbToHsv(rgb: number[]): number[] {
-  let r: number, g: number, b: number;
+  let r: number;
+  let g: number;
+  let b: number;
   if (rgb && rgb.length >= 3) {
     r = rgb[0];
     g = rgb[1];
@@ -100,7 +105,9 @@ export function rgbToHsv(rgb: number[]): number[] {
 // returns: [ 0-255, 0-255, 0-255 ]
 // refers to https://code.woboq.org/qt5/qtbase/src/gui/painting/qcolor.cpp.html
 export function hsvToRgb(hsv: number[]) {
-  let h: number, s: number, v: number;
+  let h: number;
+  let s: number;
+  let v: number;
   if (hsv && hsv.length >= 3) {
     h = hsv[0];
     s = hsv[1];
@@ -109,24 +116,24 @@ export function hsvToRgb(hsv: number[]) {
     return null;
   }
 
-  h = h == -1 ? USHRT_MAX : (h % 360) * 100;
+  h = h === -1 ? USHRT_MAX : (h % 360) * 100;
   s = s * 0x101;
   v = v * 0x101;
 
-  let r = 0,
-    g = 0,
-    b = 0;
+  let r = 0;
+  let g = 0;
+  let b = 0;
   if (s === 0 || h === USHRT_MAX) {
     // achromatic case
     r = g = b = v;
   } else {
-    //chromatic case
+    // chromatic case
     h = h === 36000 ? 0 : h / 6000;
     s = s / USHRT_MAX;
     v = v / USHRT_MAX;
     const i = Math.floor(h);
     const f = h - i;
-    let p = v * (1.0 - s);
+    const p = v * (1.0 - s);
 
     if (i & 1) {
       const q = v * (1.0 - s * f);
@@ -177,7 +184,7 @@ export function hsvToRgb(hsv: number[]) {
 }
 
 export function stringToRgb(colorStr: string): number[] {
-  let fakeDiv = document.createElement("div");
+  const fakeDiv = document.createElement("div");
   fakeDiv.style.color = colorStr;
   document.body.appendChild(fakeDiv);
 

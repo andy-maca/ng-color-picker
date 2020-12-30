@@ -1,0 +1,16 @@
+{
+  "name": "color-picker",
+  "version": "0.0.1",
+  "author": "Andy Ma<andy.ca.ma@me.com>",
+  "description": "A color picker like QColorDialog in Qt",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andy-maca/ng-color-picker.git"
+  },
+  "keywords": ["Qt", "Color picker"],
+  "peerDependencies": {
+    "@angular/common": "^8.2.0",
+    "@angular/core": "^8.2.0"
+  }
+}
